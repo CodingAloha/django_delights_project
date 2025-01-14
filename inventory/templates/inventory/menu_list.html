@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<h1>Menu</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu_item in menu_items %}
+        <tr>
+            <td>{{ menu_item.name }}</td>
+            <td>${{ menu_item.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Restaurant Dashboard</h1>
+
+    <h2>Inventory</h2>
+    <ul>
+        {% for item in inventory %}
+            <li>{{ item.name }}: {{ item.quantity }} {{ item.unit }} available @ ${{ item.unit_price }}/{{ item.unit }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Purchases</h2>
+    <ul>
+        {% for purchase in purchases %}
+            <li>{{ purchase.menu_item.title }} x{{ purchase.quantity }} purchased on {{ purchase.timestamp }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Menu Items</h2>
+    <ul>
+        {% for menu_item in menu_items %}
+            <li>{{ menu_item.title }} - ${{ menu_item.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Statistics</h2>
+    <p>Total Revenue: ${{ total_revenue }}</p>
+    <p>Total Cost: ${{ total_cost }}</p>
+    <p>Profit: ${{ profit }}</p>
+</body>
+</html>
