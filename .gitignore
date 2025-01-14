@@ -1,0 +1,49 @@
+# Byte-compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Django stuff
+db.sqlite3  # Ignore SQLite database (for local development)
+*.log       # Log files
+
+# Environment variables
+.env        # For environment variables like SECRET_KEY
+
+# Static files
+staticfiles/
+static/
+
+# Media files (optional, if uploaded files shouldn't be tracked)
+media/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Jupyter Notebook checkpoints (if you're using notebooks)
+.ipynb_checkpoints/
+
+# System files
+.DS_Store  # macOS metadata file
+Thumbs.db  # Windows metadata file
+
+# Node.js dependencies (if you're using npm for front-end)
+node_modules/
+
+# Coverage reports (for testing)
+htmlcov/
+.coverage
+*.cover
+
+# pytest cache
+.pytest_cache/
+
+# Migrations (optional, can exclude if you want to regenerate them on other machines)
+*/migrations/*.py
+!*/migrations/__init__.py
