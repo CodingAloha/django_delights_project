@@ -55,7 +55,7 @@ ROOT_URLCONF = 'django_delights.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,12 +119,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / "static",  
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles" 
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Where unauthenticated users are redirected to log in
+LOGIN_URL = '/accounts/login/'
+
+# Where users are redirected after logging in
+LOGIN_REDIRECT_URL = '/'
+
+# Where users are redirected after logging out
+LOGOUT_REDIRECT_URL = '/accounts/login/'

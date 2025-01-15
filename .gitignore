@@ -15,7 +15,6 @@ db.sqlite3  # Ignore SQLite database (for local development)
 
 # Static files
 staticfiles/
-static/
 
 # Media files (optional, if uploaded files shouldn't be tracked)
 media/

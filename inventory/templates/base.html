@@ -1,27 +1,39 @@
 {% load static %}
+<link rel=""stylesheet" href="{% static 'css/styles.css' %}">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Restaurant Dashboard{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'home' %}">Inventory</a></li>
             <li><a href="{% url 'menu-list' %}">Menu</a></li>
             <li><a href="{% url 'purchase-list' %}">Purchases</a></li>
             <li><a href="{% url 'financial-summary' %}">Profit & Revenue</a></li>
         </ul>
     </nav>
+
+    <!-- Flash Messages-->
+     {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <main>
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>&copy; 2025 Restaurant Management</p>
+        <p>&copy; {{ current_year }} Restaurant Management</p>
     </footer>
 </body>
 </html>

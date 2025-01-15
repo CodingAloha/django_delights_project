@@ -4,18 +4,24 @@
 
 {% block content %}
 <h1>Menu</h1>
+<a href="{% url 'menu-add' %}"><button>Add Menu Item</button></a>
 <table>
     <thead>
         <tr>
-            <th>Item</th>
+            <th>Name</th>
             <th>Price</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        {% for menu_item in menu_items %}
+        {% for item in menu_items %}
         <tr>
-            <td>{{ menu_item.name }}</td>
-            <td>${{ menu_item.price }}</td>
+            <td>{{ item.title }}</td>
+            <td>${{ item.price }}</td>
+            <td>
+                <a href="{% url 'menu-edit' item.id %}">Edit</a>
+                <a href="{% url 'menu-delete' item.id %}">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>

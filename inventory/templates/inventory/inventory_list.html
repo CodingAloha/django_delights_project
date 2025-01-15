@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1>Inventory</h1>
+<a href="{% url 'ingredient-add' %}"><button>Add Ingredient</button></a>
 <table>
     <thead>
         <tr>
@@ -22,7 +23,8 @@
             <td>{{ ingredient.unit }}</td>
             <td>${{ ingredient.unit_price }}</td>
             <td>
-                <a href="#">Edit</a> <!-- Optional edit or delete actions -->
+                <a href="{% url 'ingredient-edit' ingredient.id %}">Edit</a>
+                <a href="{% url 'ingredient-delete' ingredient.id %}">Delete</a>
             </td>
         </tr>
         {% endfor %}

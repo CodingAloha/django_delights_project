@@ -3,11 +3,11 @@
 {% block title %}Confirm Delete{% endblock %}
 
 {% block content %}
-<h1>Are you sure you want to delete "{{ object.name }}"?</h1>
-<p>Once deleted, this cannot be undone.</p>
+<h1>Delete Menu Item</h1>
+<p>Are you sure you want to delete "{{ object.title }}"?</p>
 <form method="post">
     {% csrf_token %}
     <button type="submit">Yes, delete</button>
 </form>
-<a href="{% url 'home' %}"><button>Cancel</button></a>
+<a href="{% url 'menu-list' %}"><button type="button">Cancel</button></a>
 {% endblock %}
