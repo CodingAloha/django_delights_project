@@ -1,23 +1,27 @@
 from django import forms
-from .models import MenuItem, Ingredient, RecipeRequirement, Purchase
+
+from .models import Ingredient, MenuItem, Purchase, RecipeRequirement
 
 
 class MenuItemForm(forms.ModelForm):
     class Meta:
         model = MenuItem
-        fields = ['title', 'price']
+        fields = ["title", "price"]
+
 
 class IngredientForm(forms.ModelForm):
     class Meta:
         model = Ingredient
-        fields = ['name', 'quantity', 'unit', 'unit_price']
+        fields = ["name", "quantity", "unit", "unit_price"]
+
 
 class RecipeRequirementForm(forms.ModelForm):
     class Meta:
         model = RecipeRequirement
-        fields = ['menu_item', 'ingredient', 'quantity_required']
+        fields = ["menu_item", "ingredient", "quantity_required"]
+
 
 class PurchaseForm(forms.ModelForm):
     class Meta:
         model = Purchase
-        fields = ['menu_item', 'quantity']
+        fields = ["menu_item", "quantity"]

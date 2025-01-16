@@ -21,6 +21,10 @@
             <td>{{ purchase.quantity }}</td>
             <td>${{ purchase.total_price }}</td>
             <td>{{ purchase.date }}</td>
+            <td>
+                <a href="{% url 'purchase-edit' purchase.id %}"><button>Edit</button></a>
+                <a href="{% url 'purchase-delete' purchase.id %}"><button>Delete</button></a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>

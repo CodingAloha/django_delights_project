@@ -8,19 +8,20 @@
 <table>
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Title</th>
             <th>Price</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        {% for item in menu_items %}
+        {% for menu_item in menu_items %}
         <tr>
-            <td>{{ item.title }}</td>
-            <td>${{ item.price }}</td>
+            <td>{{ menu_item.title }}</td>
+            <td>${{ menu_item.price }}</td>
             <td>
-                <a href="{% url 'menu-edit' item.id %}">Edit</a>
-                <a href="{% url 'menu-delete' item.id %}">Delete</a>
+                <a href="{% url 'menu-edit' menu_item.pk %}"><button>Edit</button></a>
+                <a href="{% url 'menu-delete' menu_item.pk %}"><button>Delete</button></a>
+                <a href="{% url 'recipe-requirements' menu_item.pk %}"><button>View Recipe</button></a>
             </td>
         </tr>
         {% endfor %}

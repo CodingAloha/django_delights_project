@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Recipe for {{ menu_item.title }}{% endblock %}
+
+{% block content %}
+<h1>Recipe for {{ menu_item.title }}</h1>
+<a href="{% url 'recipe-add' %}?menu_item={{ menu_item.pk }}"><button>Add Ingredient</button></a>
+<table>
+    <thead>
+        <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for req in recipe_requirements %}
+        <tr>
+            <td>{{ req.ingredient.name }}</td>
+            <td>{{ req.quantity_required }} {{ req.ingredient.unit }}</td>
+            <td>
+                <a href="{% url 'recipe-edit' req.pk %}"><button>Edit</button></a>
+                <a href="{% url 'recipe-delete' req.pk %}"><button>Delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'menu-list' %}"><button>Back to Menu</button></a>
+{% endblock %}

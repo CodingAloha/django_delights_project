@@ -1,5 +1,4 @@
 {% load static %}
-<link rel=""stylesheet" href="{% static 'css/styles.css' %}">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +8,30 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Inventory</a></li>
+    <nav class="navbar">
+        <!-- Left Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'menu-list' %}">Menu</a></li>
             <li><a href="{% url 'purchase-list' %}">Purchases</a></li>
             <li><a href="{% url 'financial-summary' %}">Profit & Revenue</a></li>
         </ul>
-    </nav>
 
-    <!-- Flash Messages-->
-     {% if messages %}
+        <!-- Right Auth Links -->
+        <div class="auth-links">
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <a href="#" onclick="this.closest('form').submit(); return false;">Logout</a>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+    <!-- Flash Messages -->
+    {% if messages %}
     <div class="messages-container">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
@@ -29,9 +41,12 @@
     </div>
     {% endif %}
 
+    <!-- Page Content -->
     <main>
         {% block content %}{% endblock %}
     </main>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; {{ current_year }} Restaurant Management</p>
     </footer>

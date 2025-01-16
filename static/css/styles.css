@@ -1,88 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-nav {
-    background: #333;
-    color: #fff;
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-bottom: 1px solid #444;
 }
 
-nav ul {
+/* Left Navigation Links */
+.nav-links {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-nav ul li {
-    display: inline;
+.nav-links li {
     margin-right: 20px;
 }
 
-nav ul li a {
-    color: #fff;
+.nav-links a {
     text-decoration: none;
+    color: #fff;
+    font-size: 16px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+/* Right Auth Links */
+.auth-links {
+    position: relative;
 }
 
-table th {
-    background-color: #f4f4f4;
+.auth-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
 }
 
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.auth-links form {
+    display: inline; /* Logout form styled as inline */
+    margin: 0;
+}
+
+/* Flash Messages */
+.messages-container {
+    margin: 10px 20px;
+}
 
 .alert {
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid transparent;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .alert-success {
-    color: #155724;
     background-color: #d4edda;
-    border-color: #c3e6cb;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
 .alert-error {
-    color: #721c24;
     background-color: #f8d7da;
-    border-color: #f5c6cb;
-}
-
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button[type="button"] {
-    background-color: #6c757d; /* Gray for non-submission buttons */
-}
-
-button[type="button"]:hover {
-    background-color: #5a6268;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
