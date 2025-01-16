@@ -7,6 +7,7 @@ A Django-based web application for a restaurant.  Functionalities to manage inve
 Secure login/logout features and user-friendly interface for restaurant owners/manageers to track their operations.
 
 **Features**
+
 *Inventory management*:
 - View, add, edit and delete ingredients
 - Track ingredient quantities and unit prices
