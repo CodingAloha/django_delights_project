@@ -6,23 +6,23 @@ My first Django project, self wrote every line of code! Overall skeleton of the 
 A Django-based web application for a restaurant.  Functionalities to manage inventory, menu items, recipes, purchases and financial summary.
 Secure login/logout features and user-friendly interface for restaurant owners/manageers to track their operations.
 
-Features:
-Inventory management:
+**Features**:
+*Inventory management*:
 - View, add, edit and delete ingredients
 - Track ingredient quantities and unit prices
 
-Menu Management:
+*Menu Management*:
 - Add, edit, and delete menu items
 - Associate recipes with menu items, including required ingredients and their quantities
 
-Purchase Management:
+*Purchase Management*:
 - Record customer purchases
 - Ensure inventory has sufficient ingredients for menu items
 
-Financial Summary:
+*Financial Summary*:
 - Calculate total revenue, total cost, and overall profit
 
-Authentication:
+*Authentication*:
 - secure login/logout system
 - Access restricted to authenticated users
 
