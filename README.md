@@ -1,4 +1,4 @@
-***Work in Progress***
+***Finalized Project***
 
 My first Django project, self wrote every line of code! Overall skeleton of the project was used from Codecademy (I don't take credit for the idea of the project)
 
